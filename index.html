@@ -9,7 +9,11 @@
 
       .bgimg {
         /* Background image */
-        background-image: url("/imgs/sb.jpg");
+
+        background: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.33)), url("imgs/sb.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
         /* Full-screen */
         height: 100%;
         width: 100%;
@@ -30,10 +34,45 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        padding: 10px;
         transform: translate(-50%, -50%);
         text-align: center;
+        background: rgba(0, 0, 0, 0.77);
       }
-
+      .title {
+        font-size: 50px;
+      }
+      .subTitle {
+        font-size: 27px;
+        margin-bottom: 30px;
+      }
+      .form {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+      .inputBox {
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+      .submitButton {
+        margin: auto;
+        margin-top: 7px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 7px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #3323ff;
+        text-align: center;
+      }
+      .submitButton:hover {
+        background-color: #4eb5f1;
+      }
       hr {
         margin: auto;
         width: 40%;
@@ -43,10 +82,30 @@
   <body>
     <div class="bgimg">
       <div class="middle">
-        <h1>Welcome to Sportsbook.Bet</h1>
-        <h1>If you are interested in purchasing this domain, please fill out the contact form below</h1>
+        <h1 class="title">Welcome to Sportsbook.Bet</h1>
+        <h3 class="subTitle">If you are interested in purchasing this domain, please fill out the form below</h3>
+
         <hr />
-        <p>FORM GOES HERE</p>
+
+        <form action="https://formspree.io/f/xknkvnjn" method="POST" class="form">
+          <label class="inputBox">
+            Name:
+            <input name="name" />
+          </label>
+          <label class="inputBox">
+            Email:
+            <input type="email" name="_replyto" />
+          </label>
+          <label class="inputBox">
+            Phone:
+            <input name="phone" type="tel" />
+          </label>
+          <label class="inputBox">
+            Message:
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit" class="submitButton">Submit</button>
+        </form>
       </div>
     </div>
   </body>
